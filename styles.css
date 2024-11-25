@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", serif;
+}
+
+:root{
+
+    /* Primary */
+
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyan-bg: hsla(178, 100%, 50%, .5);
+
+    /* Neutral */
+    --very-dark-blue: hsl(217, 54%, 0);
+    --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Font Weights */
+
+    --bold-300: 300;
+    --bold-400: 400;
+    --bold-600: 600;
+}
+
+body{
+    background-color: var(--very-dark-blue-main-bg);
+}
+
+/* Hero Container */
+
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--very-dark-blue-card-bg);
+    border-radius: 15px;
+    margin: 100px auto;
+    width: 400px;
+    padding: 25px;
+    box-shadow: 0 0 50px 5px var(--very-dark-blue);
+}
+
+.image-container{
+    position: relative;
+}
+
+.main-img{
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+}
+
+.view-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+}
+
+.overlay{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 15px;
+    background-color: var(--cyan-bg);
+}
+
+.image-container:hover .overlay{
+    opacity: 1;
+}
+
+h1{
+    cursor: pointer;
+    color: var(--white);
+    font-weight: var(--bold-400);
+}
+
+h1:hover{
+    color: var(--cyan);
+}
+
+.hero-container p{
+    color: var(--soft-blue);
+    font-size: 18px;
+}
+
+/* Info Container */
+
+.info-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Price Container, Time Container */
+
+.price-container, .time-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-container p{
+    color: var(--cyan);
+    font-weight: var(--bold-600);
+}
+
+.line{
+    width: 100%;
+    border: 1px solid var(--very-dark-blue-line);
+}
+
+/* Creator Container */
+
+.creator-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.creator-avatar{
+    width: 40px;
+    aspect-ratio: (1/1);
+    border: 1px solid var(--white);
+    border-radius: 1000px;
+}
+
+.creator-container p span{
+    cursor: pointer;
+    color: var(--white);
+}
+
+.creator-container p span:hover{
+    color: var(--cyan);
+}
+
+@media screen and (max-width: 450px) {
+    .hero-container{
+        margin: 50px auto;
+        width: 90%;
+        aspect-ratio: (1/1);
+    }
+}
